@@ -77,6 +77,10 @@ legend{font-family:var(--display);font-weight:700;font-size:18px;margin-bottom:1
 .upi code{font-family:var(--mono);font-size:15px;user-select:all;background:var(--bg);padding:6px 10px;border-radius:6px;word-break:break-all}
 .upi button{font:inherit;font-size:14px;border:1px solid var(--peacock);color:var(--peacock);background:transparent;border-radius:6px;padding:6px 12px;cursor:pointer}
 .steps{margin:0;padding-left:20px;color:var(--muted);font-size:14px;display:grid;gap:4px}
+.qr{display:grid;justify-items:center;gap:6px;background:#fff;border-radius:10px;padding:14px;border:1px solid var(--line)}
+.qr img{width:220px;height:220px;image-rendering:pixelated}
+.qr p{margin:0;font-size:13px;color:#2b3a38;text-align:center}
+.upipay{display:block;text-align:center;font-family:var(--display);font-weight:700;border:2px solid var(--peacock);color:var(--peacock);border-radius:10px;padding:11px;text-decoration:none}
 .walink{color:var(--peacock);font-weight:600;font-size:15px;text-decoration:underline;text-underline-offset:3px}
 footer{color:var(--muted);font-size:13px;text-align:center}
 .gallery{display:grid;gap:10px;min-width:0}
@@ -109,7 +113,7 @@ footer{color:var(--muted);font-size:13px;text-align:center}
   <form id="order" novalidate>
     <div style="display:grid;gap:22px">
       <fieldset>
-        <legend>Choose finish · பூச்சு</legend>
+        <legend>Choose finish</legend>
         <div class="finishes" id="finishes"></div>
       </fieldset>
 
@@ -148,10 +152,16 @@ footer{color:var(--muted);font-size:13px;text-align:center}
     <h2 id="payh">How to pay · பணம் செலுத்த</h2>
     <ol class="steps">
       <li>Send your order on WhatsApp.</li>
-      <li>Pay the total by UPI and send the payment screenshot.</li>
+      <li>Pay the total by scanning the QR or using the UPI ID below.</li>
+      <li>Send the payment screenshot on WhatsApp.</li>
       <li>We dispatch and share the tracking number.</li>
     </ol>
+    <div class="qr">
+      <img src="data:image/png;base64,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" alt="BHIM UPI QR code for 8903150758@upi" width="390" height="390">
+      <p>Scan with BHIM, Google Pay, PhonePe, Paytm or any UPI app</p>
+    </div>
     <div class="upi"><code id="upi"></code><button type="button" id="copy">Copy UPI ID</button></div>
+    <a class="upipay" id="upipay">Pay with a UPI app on this phone</a>
     <a class="walink" id="walink" target="_blank" rel="noopener">Questions? Chat with us on WhatsApp</a>
   </section>
 
@@ -162,7 +172,9 @@ footer{color:var(--muted);font-size:13px;text-align:center}
 // ===== Edit these to change prices or contact details =====
 const CONFIG = {
   whatsapp: "918903150758",          // WhatsApp number with country code, no + or spaces
-  upi: "9489875897@upi",             // UPI ID
+  upi: "8903150758@upi",             // UPI ID
+  payee: "SATHISHKUMAR S R",
+  chat: "https://wa.me/message/WIWXI77IKPKQE1", // WhatsApp business chat link
   finishes: [
     { id: "glossy", name: "Glossy Finish", ta: "பளபளப்பு", price: 449, note: "Bright, vivid colours" },
     { id: "matte",  name: "Premium Matte Finish", ta: "மேட்", price: 499, note: "No glare, rich look" }
@@ -205,7 +217,7 @@ $("lightbox").onclick = () => { $("lightbox").hidden = true; };
 document.addEventListener("keydown", e => { if (e.key === "Escape") $("lightbox").hidden = true; });
 
 $("upi").textContent = CONFIG.upi;
-$("walink").href = "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent("Hi, I have a question about the 2027 Little Gods calendar.");
+$("walink").href = CONFIG.chat;
 
 $("zones").innerHTML = CONFIG.delivery.map((z, i) => `
   <div class="finish">
@@ -222,6 +234,7 @@ function render(){
   const f = chosen(), z = zone();
   $("qty").textContent = qty;
   $("total").textContent = inr(f.price * qty + z.price);
+  $("upipay").href = "upi://pay?pa=" + CONFIG.upi + "&pn=" + encodeURIComponent(CONFIG.payee) + "&am=" + (f.price * qty + z.price) + "&cu=INR&tn=" + encodeURIComponent("2027 Little Gods calendar");
   $("breakup").textContent = `${qty} × ${inr(f.price)} + ${inr(z.price)} delivery`;
 }
 $("minus").onclick = () => { if (qty > 1) { qty--; render(); } };
